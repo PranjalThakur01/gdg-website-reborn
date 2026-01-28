@@ -14,6 +14,15 @@ export const events: (EventData & { id?: string })[] = [
       "Dive deep into the latest AI advancements, from GPT models to computer vision. Network with AI researchers and practitioners. Hands-on workshops on neural networks and deep learning frameworks.",
   },
   {
+    "id": "cloud-summit-2026",
+    "year": "2026",
+    "title": "Global Cloud Computing Summit 2026",
+    "description": "Scalable architecture and serverless solutions",
+    "date": "March 15-16, 2026",
+    "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80",
+    "details": "Explore the latest in cloud infrastructure, microservices, and DevOps practices. Learn how to build resilient, scalable applications using AWS, Azure, and Google Cloud."
+  },
+  {
     id: "web3-summit-2026",
     year: "2026",
     title: "Web3 Developer Summit",
