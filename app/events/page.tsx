@@ -48,10 +48,27 @@ export default function EventsPage() {
             className="relative z-10 flex flex-col items-center text-center"
           >
             {/* Title with Developer Brackets */}
-            <div className="flex items-center justify-center gap-3 sm:gap-5">
-              <span className="text-4xl sm:text-6xl md:text-7xl font-bold text-[#4285F4] opacity-80 font-mono">&lt;</span>
-              <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tighter text-white">Events</h1>
-              <span className="text-4xl sm:text-6xl md:text-7xl font-bold text-[#34A853] opacity-80 font-mono">/&gt;</span>
+            <div className="relative group">
+              <div className="flex items-center justify-center gap-4 sm:gap-8">
+                {/* CHANGED: Decreased sizes (4xl, 6xl, 7xl) */}
+                <span className="text-5xl sm:text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-b from-blue-400 to-blue-600 opacity-40 font-mono select-none">&lt;</span>
+                
+                {/* CHANGED: Decreased sizes (4xl, 6xl, 7xl) */}
+                <h1 className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tighter text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+                  Events
+                </h1>
+
+                {/* CHANGED: Decreased sizes (4xl, 6xl, 7xl) */}
+                <span className="text-5xl sm:text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-b from-green-400 to-green-600 opacity-40 font-mono select-none">/&gt;</span>
+              </div>
+              
+              {/* Decorative Underline Beam */}
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: "100%" }}
+                transition={{ delay: 0.5, duration: 1 }}
+                className="h-[1px] mt-4 bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-50"
+              />
             </div>
 
             {/* Tagline */}
@@ -86,18 +103,16 @@ export default function EventsPage() {
             </div>
 
             {/* MOBILE BUTTONS (Centered & Switchable) */}
-            {/* UPDATED: Added w-full, justify-center, and snap-x */}
             <div className="flex sm:hidden w-full justify-center gap-3 mb-8 overflow-x-auto pb-2 scrollbar-hide snap-x">
               {years.map((year) => (
                 <button
                   key={year}
                   onClick={() => setSelectedYear(year)}
-                  // UPDATED: Added snap-center and active state scaling
                   className={`min-w-[4.5rem] px-5 py-2.5 border rounded-full text-sm font-bold font-exo whitespace-nowrap transition-all snap-center ${
                     selectedYear === year
                       ? "bg-white text-black shadow-[0_0_15px_rgba(255,255,255,0.5)] border-white scale-105"
                       : "bg-transparent text-white border-gray-700 hover:border-gray-500 opacity-70"
-                    }`}
+                  }`}
                 >
                   {year}
                 </button>
