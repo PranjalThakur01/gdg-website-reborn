@@ -27,7 +27,7 @@ export default function BrandingTape() {
 
 
       {/* Subtle Scanline effect from your reference */}
-      <div className="absolute inset-0 pointer-events-none opacity-10 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%]" />
+      <div className="absolute inset-0 pointer-events-none opacity-10 " />
       <div className="max-w-7xl mx-auto mt-12 pt-6 border-t border-neutral-200 dark:border-white/5 flex justify-between items-center">
           <span className="text-neutral-500 text-[9px] uppercase tracking-widest font-bold">© 2026 GDG NITH</span>
           <div className="flex gap-6">
