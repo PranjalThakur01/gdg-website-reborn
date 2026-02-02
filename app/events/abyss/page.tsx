@@ -37,27 +37,46 @@ const games: Game[] = [
     title: "Algo Wars",
     suit: "diamonds",
     rank: "K",
-    difficulty: "Intellect",
-    description: "A brutal test of optimization and logic. Teams are isolated in soundproof pods with a single terminal. The air supply in the pod is linked to the efficiency of your code—inefficient algorithms consume oxygen faster than it can be replenished.",
-    gameplay: "Teams receive a problem statement every 15 minutes. You must write, compile, and submit code that passes 100 hidden test cases. You are not just coding for correctness; you are coding for memory and time efficiency. The server rejects any solution slower than the current leading submission.",
-    twist: "Infinite loops drain real oxygen from the room. Optimize or suffocate.",
+    difficulty: "Game Theory",
+    description: "A team-based strategy game inspired by the Repeated Prisoner’s Dilemma. You don’t play the game manually. You design a strategy, and your algorithm plays for you. No coding experience is required—this is a battle of psychological and logical thinking.",
+    gameplay: "Teams submit a single strategy that decides whether to Cooperate (C) or Defect (D) based on history. Submissions can be in Plain English, Voice, Logic rules, or Flowcharts.\n\nYour strategy is then executed automatically in a tournament against other teams. The goal is not just to win one match, but to perform well over many rounds by balancing cooperation and betrayal.",
+    twist: "The total number of rounds (N) is unknown. A chaotic Multi-team (N-player) mode may be revealed on game day.",
     rules: [
-      "Solve 3 algorithmic challenges of increasing difficulty.",
-      "Time complexity must be strictly O(n) or better.",
-      "Last team to submit a passing solution for each round is eliminated.",
-      "No external libraries or internet access allowed.",
+      "Team Size: 2–4 members (Club/society-based).",
+      "No coding required. Strategies accepted in English, Voice, or Logic.",
+      "Objective: Maximize average score over unknown rounds.",
+      "Scoring: Based on Prisoner's Dilemma payoff (Revealed on day).",
+      "Winning Criteria: Highest average score.",
     ],
-    gameOver: "Runtime Error (Asphyxiation)",
+    gameOver: "Betrayal (Zero Sum)",
     image: "https://i.postimg.cc/NFk82F0r/algo-mob.jpg"
   },
   {
     id: 2,
+    title: "Club Quiz",
+    suit: "clubs",
+    rank: "3",
+    difficulty: "Teamwork",
+    description: "A deceptive trivia gauntlet where knowledge is secondary to consensus. Your team stands on a platform divided into four quadrants. With every wrong answer, one quadrant drops into the abyss.",
+    gameplay: "A question is projected on the wall. The team has 10 seconds to deliberate. You must verbally agree on an answer and press the corresponding button together.\n\nIf even one member presses a different button, the answer is counted as wrong regardless of correctness. You must move as one mind, or fall separately.",
+    twist: "The 'Betray' Button: You can steal points from other teams by hitting a hidden buzzer, but if the sensors catch you, your score resets to absolute zero.",
+    rules: [
+      "5 rounds of rapid-fire trivia regarding club history and logic.",
+      "Teams of 4 must answer unanimously (all buttons pressed within 0.5s).",
+      "Wrong answers reduce the available floor space by 25%.",
+      "Absolute silence is mandatory between questions.",
+    ],
+    gameOver: "Elimination (The Drop)",
+    image: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=400&h=400&fit=crop"
+  },
+  {
+    id: 3,
     title: "Psycho Pool",
     suit: "hearts",
     rank: "J",
     difficulty: "Psychological",
     description: "A competitive social experiment where you don't play against the game—you play against the crowd. Participants must navigate three phases of psychological elimination by predicting collective choices. It is a test of herd mentality versus individual intuition. Can you predict what everyone else is thinking before they do?",
-    gameplay: "The game operates in three distinct phases. Phase 1 (Survival): You must avoid choosing the least selected option. Uniqueness is fatal. Phase 2 (Balance): You must avoid both the most popular AND the least popular options. You must survive in the 'average'. Phase 3 (The Showdown): The top players compete against the Audience. The spectators vote to 'kill' specific answers. If the crowd predicts your choice, you are eliminated.",
+    gameplay: "The game operates in three distinct phases.\n\nPhase 1 (Survival): You must avoid choosing the least selected option. Uniqueness is fatal.\n\nPhase 2 (Balance): You must avoid both the most popular AND the least popular options. You must survive in the 'average'.\n\nPhase 3 (The Showdown): The top players compete against the Audience. The spectators vote to 'kill' specific answers. If the crowd predicts your choice, you are eliminated.",
     twist: "In the final round, the Audience is the executioner. If they successfully predict the finalists' moves, the game ends in an Audience Victory and no player wins.",
     rules: [
       "Phase 1: Do NOT pick the least popular answer. (Minority gets eliminated).",
@@ -69,41 +88,23 @@ const games: Game[] = [
     gameOver: "Rejected (Social Exile)",
     image: "https://i.postimg.cc/13MZyrrS/Gemini-Generated-Image-3x7q1a3x7q1a3x7q.png"
   },
-  {
-    id: 3,
-    title: "Club Quiz",
-    suit: "clubs",
-    rank: "3",
-    difficulty: "Teamwork",
-    description: "A deceptive trivia gauntlet where knowledge is secondary to consensus. Your team stands on a platform divided into four quadrants. With every wrong answer, one quadrant drops into the abyss.",
-    gameplay: "A question is projected on the wall. The team has 10 seconds to deliberate. You must verbally agree on an answer and press the corresponding button together. If even one member presses a different button, the answer is counted as wrong regardless of correctness.",
-    twist: "You can steal points from other teams by hitting a 'Betray' buzzer, but if you are caught by the sensors, your score resets to zero.",
-    rules: [
-      "5 rounds of rapid-fire trivia regarding club history and logic.",
-      "Teams of 4 must answer unanimously (all buttons pressed within 0.5s).",
-      "Wrong answers reduce the available floor space by 25%.",
-      "Absolute silence is mandatory between questions.",
-    ],
-    gameOver: "Elimination (The Drop)",
-    image: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=400&h=400&fit=crop"
-  },
  {
     id: 4,
     title: "Escape Room",
     suit: "spades",
     rank: "5",
     difficulty: "Physical / Logic",
-    description: "Escape Rooms  pushes you into the world of hidden clues, secrets,codes and mind bending challenges where every second matters. Players must think fast, work together, and trust their instincts to break free before time runs out. It’s a race against the clock, a test of teamwork, and an experience that turns ordinary spaces into unforgettable challenges.",
-    gameplay: "The game will be conducted in two rounds. In Round 1, teams must complete two different tracks with multiple levels, moving across the old LH building under the guidance of volunteers. Each team must finish the first track within the given time limit to qualify for the second track, and after completing both, only the teams with the best overall time will advance. In Round 2, the qualified teams will face a final challenge that tests their speed, coordination, and problem-solving skills, and the team that completes the task in the shortest time will be declared the winner.",
-    twist: "The clock decides your fate.Hints can save you—but they demand a sacrifice,Choose wisely, or lose one of your own.",
+    description: "A high-stakes containment breach scenario. Teams are thrust into a physical track rigged with obstacles that require calculation and agility. Digital reliance is a weakness; here, only your mind and body can save you from the lockdown.",
+    gameplay: "The game will be conducted in two rounds. In Round 1, teams must complete two different tracks with multiple levels, moving across the old LH building under the guidance of volunteers. Each team must finish the first track within the given time limit to qualify for the second track.\n\nIn Round 2, the qualified teams will face a final challenge that tests their speed, coordination, and problem-solving skills. The team that completes the task in the shortest time will be declared the winner.",
+    twist: "The Price of Knowledge: You may summon a Volunteer for help, but it costs you. You must choose: Sacrifice one teammate (immediate removal from the round) or suffer a 60-second Time Freeze.",
     rules: [
-      "ABSOLUTE BAN: No mobile phones, internet, or outside help. Violation = Immediate Disqualification.",
+      "ABSOLUTE BAN: No mobile phones, internet, or outside help.",
       "Zero Tolerance: Cheating or misbehavior results in instant team elimination.",
       "Data Protocol: Codes derived from obstacles must be written on the General Instructions Sheet.",
       "Penalty Option: To ask for help, you must accept a 60s penalty OR eject one member.",
     ],
     gameOver: "Disqualified (Purged)",
-    image: "https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?w=400&h=400&fit=crop"
+    image: "https://i.postimg.cc/Dy8Grxmw/escaperoom.jpg"
   },
   {
     id: 5,
@@ -111,9 +112,9 @@ const games: Game[] = [
     suit: "diamonds",
     rank: "10",
     difficulty: "Strategy",
-    description: "A ruthless economic simulation set in a volatile, closed market. You start with credits and a portfolio of assets. Your goal is not just to be rich, but to be the *only* one solvent.",
-    gameplay: "A central holographic ticker displays real-time prices. You use a tablet to buy and sell. Hidden throughout the arena are 'Insider Info' cards that predict the next crash. You can trade these cards with other players, or use them to short the market before a catastrophe.",
-    twist: "Insider trading is allowed, but if the 'SEC' AI bot scans you holding an Info Card, your assets are frozen instantly.",
+    description: "A ruthless economic simulation set in a volatile, closed market. You start with credits and a portfolio of assets. Your goal is not just to be rich, but to be the *only* one solvent when the crash hits.",
+    gameplay: "A central holographic ticker displays real-time prices. You use a tablet to buy and sell assets. Hidden throughout the arena are 'Insider Info' cards that predict the next crash.\n\nYou can trade these cards with other players, or use them to short the market before a catastrophe. Trust no one; the market is rigged.",
+    twist: "Insider trading is encouraged, but an 'SEC' AI bot roams the floor. If it scans you holding an Info Card, your assets are frozen instantly.",
     rules: [
       "Start with 1000 credits. Buy low, sell high.",
       "Maintain a positive balance after the inevitable Market Crash event.",
@@ -128,18 +129,18 @@ const games: Game[] = [
     title: "Black Box",
     suit: "spades",
     rank: "8",
-    difficulty: "Mystery",
-    description: "A giant obsidian cube sits in the center of the room. It has one input slot and one output display. You must determine the algorithm inside the box to stop the countdown.",
-    gameplay: "Teams take turns feeding the box a set of items or numbers. The box produces a result (a color, a sound, or a number). You must analyze the input-output pairs to deduce the function $f(x)$. Once you think you know the logic, you must input the 'Master Key' to shut it down.",
-    twist: "The logic changes every time a wrong answer is submitted, becoming more complex.",
+    difficulty: "Strategy / Bidding",
+    description: "A three-phase economic warfare simulation. You begin in the dark, bidding on sealed mystery boxes containing words, power-ups, or penalties. Only the astute survive the Blind Auction to face the Terminal Challenges. The final two teams enter a high-stakes Open Auction for vintage stamps where time equals value.",
+    gameplay: "Phase 1: Blind Auction (6 Teams). 5 Rounds of sealed bidding on Mystery Boxes based on cryptic hints. Highest bid wins; ties favor the underdog. Form word combos for points.\n\nPhase 2: Terminal Challenge (Top 4). Solve time-bound logic puzzles on fixed terminals. Accuracy determines survival.\n\nPhase 3: The Finale (Top 2). Live open auction for Stamps. Older stamps carry higher base points.",
+    twist: "In Phase 1, the box is a gamble. You might bid your fortune on a box that contains a 'Penalty' card, sabotaging your own score.",
     rules: [
-      "Test inputs to observe outputs (Max 5 tests).",
-      "Deduce the internal function (e.g., Prime Number shift, Fibonacci mapping).",
-      "Submit the final key code.",
-      "Only 3 final attempts allowed before lockout.",
+      "Phase 1: Sealed bids (2 min limit). Highest bid wins.",
+      "Box Contents: Words (Always), Power-ups (Maybe), Penalties (Maybe).",
+      "Progression: Top 4 advance to Terminals, Top 2 advance to Final Auction.",
+      "Finale: Bidding is open. Stamp Value increases with Age.",
     ],
-    gameOver: "System Failure (Explosion)",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=400&fit=crop"
+    gameOver: "Outbid (Eliminated)",
+    image: "https://i.postimg.cc/3JqDw28F/blackbox.jpg"
   },
   {
     id: 7,
@@ -148,8 +149,8 @@ const games: Game[] = [
     rank: "Q",
     difficulty: "Management",
     description: "A high-stakes city management simulation on a massive touch table. You are the ruling council of a city facing an apocalypse. You must make moral choices that determine who lives and who dies.",
-    gameplay: "Players are assigned roles: Mayor, General, Engineer, Doctor. You have limited energy and food. A disaster strikes every round (pandemic, earthquake, riots). You must allocate resources. Powering the hospital might save lives but leaves the walls undefended against raiders.",
-    twist: "Natural disasters are triggered by the progress of the opposing team (playing as 'Nature').",
+    gameplay: "Players are assigned roles: Mayor, General, Engineer, Doctor. You have limited energy and food. A disaster strikes every round (pandemic, earthquake, riots).\n\nYou must allocate resources. Powering the hospital might save lives but leaves the walls undefended against raiders. Every choice has a body count.",
+    twist: "Natural disasters are not random. They are triggered by the progress of the opposing team, who are playing as 'Nature'.",
     rules: [
       "Manage power, water, and food levels.",
       "Keep population happiness above 50% to prevent revolution.",
@@ -166,7 +167,7 @@ const games: Game[] = [
     rank: "A",
     difficulty: "Probability / Malice",
     description: "A high-stakes game of risk, bluffing, and survival. Players take turns drawing hidden cards and choosing who suffers the consequences — themselves or someone else. Every choice could cost a life… or earn another chance. Ability cards introduce control, deception, and strategy. Only one player walks out alive each round.",
-    gameplay: "Each player starts with 3 lives. A deck contains a hidden mix of Static and Charged cards. On your turn, you must choose who to use the top card on before it is revealed. Players receive ability cards at the start of each cycle and may hold a maximum of 2. Rounds continue until only one player remains alive. Each team sends one player per round, and the team with the most surviving players at the end wins.",
+    gameplay: "Each player starts with 3 lives. A deck contains a hidden mix of Static and Charged cards.\n\nOn your turn, you must choose who to use the top card on before it is revealed. Players receive ability cards at the start of each cycle and may hold a maximum of 2.\n\nRounds continue until only one player remains alive. Each team sends one player per round, and the team with the most surviving players at the end wins.",
     twist: "Targeting yourself is a gamble — it might give you another turn. Targeting others might save you… or make you a threat.",
     rules: [
       "Start with 3 Lives. Deck contains hidden Static & Charged cards.",
@@ -177,7 +178,7 @@ const games: Game[] = [
       "Max 2 Ability Cards held at any time.",
     ],
     gameOver: "Zero Lives (Discharged)",
-    image: "https://images.unsplash.com/photo-1599508704512-2f19efd1e35f?w=400&h=400&fit=crop"
+    image: "https://i.postimg.cc/1XcJQJhk/buckshot.jpg"
   },
 ];
 
@@ -317,7 +318,10 @@ const GameModal = ({ game, onClose }: { game: Game; onClose: () => void }) => {
 
                 <div>
                 <h3 className="text-xs uppercase text-gray-500 mb-2 font-bold tracking-widest border-b border-neutral-800 pb-1">Operational Procedure</h3>
-                <p className="text-md leading-relaxed text-gray-400">{game.gameplay}</p>
+                {/* ADD whitespace-pre-line HERE 👇 */}
+                <p className="text-md leading-relaxed text-gray-400 whitespace-pre-line">
+                    {game.gameplay}
+                </p>
                 </div>
 
                 <div className="p-5 bg-neutral-950 border-l-4 border-red-600 rounded-r">
@@ -377,6 +381,18 @@ export default function AbyssEventPage() {
       <Head>
         <title>ABYSS | Borderland</title>
       </Head>
+
+      {/* --- ADDED STYLE TO HIDE THE DARK MODE BUTTON --- */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        .theme-toggle,
+        .dark-mode-toggle,
+        button[aria-label="Toggle theme"],
+        button[aria-label="Switch to dark mode"],
+        button[aria-label="Switch to light mode"],
+        .mode-toggle {
+            display: none !important;
+        }
+      `}} />
 
       {/* Sticky Top Bar (Appears on Scroll) */}
       <div className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 flex justify-center py-4 pointer-events-none ${scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'}`}>
@@ -463,7 +479,7 @@ export default function AbyssEventPage() {
                    - CSS Variable for Responsive Height: Mobile: 360px | Desktop: 400px
                    - Passed to TiltedCard props via var()
                 */}
-                <div className="w-full [--card-height:350px] md:[--card-height:390px]">
+                <div className="w-full [--card-height:360px] md:[--card-height:400px]">
                     <TiltedCard
                         imageSrc={game.image}
                         altText={game.title}
