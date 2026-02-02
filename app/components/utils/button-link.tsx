@@ -1,22 +1,32 @@
 "use client";
 
-import { Button, ButtonProps } from "@/app/components/ui/button";
+import { Button } from "@/app/components/ui/button";
 import Link from "next/link";
+import { type VariantProps } from "class-variance-authority";
+import { buttonVariants } from "@/app/components/ui/button";
 
-interface ButtonLinkProps
-  extends Omit<ButtonProps, "asChild">,
-    React.ComponentProps<typeof Link> {
+interface ButtonLinkProps extends VariantProps<typeof buttonVariants> {
+  href: string;
   children?: React.ReactNode;
+  className?: string;
+  target?: string;
+  rel?: string;
+  title?: string;
 }
 
 export function ButtonLink({
   href,
   children,
-  ...props
+  variant,
+  size,
+  className,
+  target,
+  rel,
+  title,
 }: ButtonLinkProps) {
   return (
-    <Button asChild {...props}>
-      <Link href={href}>
+    <Button asChild variant={variant} size={size} className={className}>
+      <Link href={href} target={target} rel={rel} title={title}>
         {children}
       </Link>
     </Button>

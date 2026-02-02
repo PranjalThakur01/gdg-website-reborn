@@ -125,7 +125,7 @@ export default function MenuPage() {
                         : "text-5xl md:text-7xl lg:text-8xl"
                     } font-black tracking-tighter`}
                   >
-                    <div className="relative block whitespace-nowrap overflow-hidden flex items-center gap-3">
+                    <div className="relative whitespace-nowrap overflow-hidden flex items-center gap-3">
                       {/* Icon for social links */}
                       {isSocialLink && (
                         <Icon
@@ -141,7 +141,7 @@ export default function MenuPage() {
 
                       {/* SECOND COPY (Hover State - Slides up from below) */}
                       <span
-                        className={`absolute inset-0 block flex items-center gap-3 translate-y-[110%] transition-transform duration-300 ease-[cubic-bezier(0.33,1,0.68,1)] group-hover:translate-y-0 ${colorClass}`}
+                        className={`absolute inset-0 flex items-center gap-3 translate-y-[110%] transition-transform duration-300 ease-[cubic-bezier(0.33,1,0.68,1)] group-hover:translate-y-0 ${colorClass}`}
                       >
                         {isSocialLink && (
                           <Icon

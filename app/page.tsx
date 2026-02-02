@@ -1,13 +1,13 @@
 
 import Footer from "./components/footer";
-import SectionOne from "./components/home/sections/section-one";
+import { BaseHeroSection } from "./components/home/sections/hero-section";
 import { AboutScrollSection } from "./components/about/about-scroll-section";
 
 export default function Home() {
   return (
     <div>
       <main>
-        <SectionOne />
+        <BaseHeroSection description="Empowering Developers, Elevating Innovation at GDG NITH Chapter." />
         <AboutScrollSection />
       </main>
       <footer>
