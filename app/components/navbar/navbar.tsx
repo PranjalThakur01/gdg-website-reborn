@@ -95,14 +95,6 @@ export const Navbar = () => {
               className="object-contain" // Keep aspect ratio
             />
           </div>
-          <div id="gdg-logo" className={cn(
-            "border bg-card/50 backdrop-blur-md rounded-full px-4 py-1.5 transition-colors",
-            scrolled && "bg-transparent border-transparent" // Hide capsule style when navbar itself is a capsule? Optional. Leaving as is for now feels safer.
-          )}>
-            <span className="text-foreground font-medium text-sm tracking-wide">
-              GDG-NITH
-            </span>
-          </div>
         </Link>
 
         {/* Center: Social Icons (Hidden on mobile) */}
